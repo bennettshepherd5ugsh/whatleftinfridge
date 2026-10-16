@@ -1,0 +1,8 @@
+# Runtime data — tạo tự động khi chạy app, không commit
+backend/data/fridge.json
+backend/data/cache.json
+backend/data/topics.json
+*.tmp
+__pycache__/
+*.pyc
+.venv/

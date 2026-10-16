@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tủ Lạnh Nấu Gì</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>🍲 Tủ Lạnh Nấu Gì</h1>
+  <p>Còn gì trong tủ lạnh — tìm món, xem reels, nấu ngay</p>
+</header>
+
+<nav class="tabs">
+  <button data-tab="fridge" class="active">🧊 Tủ lạnh</button>
+  <button data-tab="search">🔍 Tìm món</button>
+  <button data-tab="suggest">💡 Gợi ý từ tủ</button>
+  <button data-tab="explore">🌍 Khám phá</button>
+</nav>
+
+<main>
+  <!-- TAB: TỦ LẠNH -->
+  <section id="tab-fridge" class="tab active">
+    <div class="card">
+      <h2>Tủ lạnh nhà bạn có gì?</h2>
+      <p class="muted">Gõ để lọc nhanh, chạm để chọn/bỏ chọn nguyên liệu. Không cần gõ tay từng món.</p>
+      <input type="text" id="food-filter" placeholder="Lọc nguyên liệu… (vd: thịt, rau, cá)">
+      <div id="food-list"></div>
+      <div class="toolbar">
+        <button class="primary" id="fridge-save">Lưu tủ lạnh</button>
+        <span class="muted" id="fridge-count"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB: TÌM MÓN -->
+  <section id="tab-search" class="tab">
+    <div class="card">
+      <h2>Tìm món muốn nấu</h2>
+      <label class="lbl">Từ khóa món ăn</label>
+      <div class="search-box">
+        <input type="text" id="kw" placeholder="vd: tôm chiên, mì xào, canh chua…">
+        <button class="primary" id="btn-search">Tìm</button>
+      </div>
+      <label class="lbl">Khẩu vị (chọn nhiều)</label>
+      <div class="chips" id="taste-chips"></div>
+      <label class="lbl">Số người ăn</label>
+      <div class="chips" id="serving-chips"></div>
+    </div>
+    <div class="toolbar">
+      <button class="ghost" id="btn-rescan" style="display:none">↻ Quét lại</button>
+      <span class="muted" id="search-status"></span>
+    </div>
+    <div id="search-note"></div>
+    <div class="result-grid" id="search-results"></div>
+  </section>
+
+  <!-- TAB: GỢI Ý TỪ TỦ -->
+  <section id="tab-suggest" class="tab">
+    <div class="card">
+      <h2>Gợi ý từ tủ lạnh</h2>
+      <p class="muted" id="suggest-info"></p>
+      <button class="primary" id="btn-suggest">Xem gợi ý</button>
+    </div>
+    <h3>Món đủ nguyên liệu</h3>
+    <div id="suggest-ready"></div>
+    <h3>Món gần đủ nguyên liệu</h3>
+    <div id="suggest-near"></div>
+  </section>
+
+  <!-- TAB: KHÁM PHÁ -->
+  <section id="tab-explore" class="tab">
+    <div class="card">
+      <h2>Khám phá món ăn & xu hướng</h2>
+      <p class="muted">Quét bài viết công khai trên Facebook, Instagram và tin tức ẩm thực. Chỉ quét khi bạn bấm nút.</p>
+      <div class="search-box">
+        <input type="text" id="topic-kw" placeholder="vd: cơm tấm, trà sữa, món chay…">
+        <select id="topic-source" style="max-width:150px">
+          <option value="all">Tất cả nguồn</option>
+          <option value="facebook">Facebook</option>
+          <option value="instagram">Instagram</option>
+          <option value="news">Tin tức</option>
+        </select>
+        <button class="primary" id="btn-explore">Quét</button>
+      </div>
+      <div class="toolbar">
+        <button class="ghost" id="btn-topic-save">＋ Lưu chủ đề</button>
+        <button class="ghost" id="btn-explore-rescan" style="display:none">↻ Quét lại</button>
+      </div>
+    </div>
+    <h3>Chủ đề đã lưu</h3>
+    <div class="card" id="topic-list"><p class="muted">Chưa có chủ đề nào.</p></div>
+    <div id="explore-note"></div>
+    <div class="result-grid" id="explore-results"></div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
